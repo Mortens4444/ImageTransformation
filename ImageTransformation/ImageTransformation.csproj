@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD527E61-1842-42E5-9E92-9003CCC1A3AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageTransformation</RootNamespace>
+    <AssemblyName>ImageTransformation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Colors\Argb.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\TrAndDet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Other\Pixel.cs" />
+    <Compile Include="Enums\Direction.cs" />
+    <Compile Include="Enums\ColorSpaceType.cs" />
+    <Compile Include="Enums\ColorComponent.cs" />
+    <Compile Include="Colors\Rgb.cs" />
+    <Compile Include="Extensions\ByteExtensions.cs" />
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\DoubleExtensions.cs" />
+    <Compile Include="Extensions\IntExtensions.cs" />
+    <Compile Include="Colors\YuvColor.cs" />
+    <Compile Include="Colors\CmyColor.cs" />
+    <Compile Include="Matrices\FilteringMatrix.cs" />
+    <Compile Include="Matrices\Matrix.cs" />
+    <Compile Include="Matrices\SquareMatrix.cs" />
+    <Compile Include="TransformatedImageFactory.cs" />
+    <Compile Include="TransformMethods\ImageTransformMethod.cs" />
+    <Compile Include="TransformMethods\ColorTransformMethod.cs" />
+    <Compile Include="TransformMethods\FilterMatrixTransformMethod.cs" />
+    <Compile Include="Other\IndexWithDelta.cs" />
+    <Compile Include="Matrices\FilterMatrixWithFactorAndBias.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Bt601GrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Bt609GrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Bt709GrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Grayscale1Transformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Grayscale2Transformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\Grayscale3Transformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseBlueTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseGreenBlueTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseGreenTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseRedBlueTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseRedGreenTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseRedTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Inverse\InverseTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\DifferenceEdgeDetectorTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\EigCornerDetectionTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\HarrisCornerDetectionTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\HomogenityEdgeDetectorTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\LaplaceV1Transformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\LaplaceV2Transformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\ModifiedHarrisCornerDetectionTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\MortensV1Transformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Swap\SwapRgbToBgrTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Swap\SwapRgbToBrgTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Swap\SwapRgbToGbrTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Swap\SwapRgbToGrbTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Swap\SwapRgbToRbgTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\BluescaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\GreenBluescaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\GreenscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\RedBluescaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\RedGreenscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\RedscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\UscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\UVscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\VscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\YellowscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\YscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\YUscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\YVscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\CyanMagentascaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\CyanscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\RmyGrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\SimpleAvarageGrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\RobertsEdgeDetectorTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\SobelEdgeDetectorTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\CyanYellowscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\MagentascaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Scale\MagentaYellowscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\CornerDetectionTransformator.cs" />
+    <Compile Include="BitmapInformation\ImageTransformator\InverseSobelEdgeDetectorTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Other\ExpTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Other\NormalizedTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Other\PowTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Other\RandomTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\BlackAndWhiteTransformator.cs" />
+    <Compile Include="BitmapInformation\Transformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\ColorSpace\CmyToRgbTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\ColorSpace\RgbToCmyTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\ColorSpace\RgbToYuvTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\ColorSpace\YuvToRgbTransformator.cs" />
+    <Compile Include="BitmapInformation\ColorTransormator\Grayscale\WeightedAvarageGrayscaleTransformator.cs" />
+    <Compile Include="BitmapInformation\RgbTransformator\ArgbChangerTransformator.cs" />
+    <Compile Include="BitmapInformation\RgbTransformator\RgbChangerTransformator.cs" />
+    <Compile Include="BitmapInformation\OtherTransformator\BlockTransformator.cs" />
+    <Compile Include="BitmapInformation\OtherTransformator\ColorReplacerTransformator.cs" />
+    <Compile Include="BitmapInformation\OtherTransformator\FilteringMatrixTransformator.cs" />
+    <Compile Include="Extensions\SingleExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jellyfish.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Folder Include="BitmapInformation\ColorTransormator\" />
+    <Folder Include="BitmapInformation\ImageTransformator\" />
+    <Folder Include="BitmapInformation\ColorTransormator\Grayscale\" />
+    <Folder Include="BitmapInformation\ColorTransormator\Inverse\" />
+    <Folder Include="BitmapInformation\ColorTransormator\Swap\" />
+    <Folder Include="BitmapInformation\ColorTransormator\Scale\" />
+    <Folder Include="BitmapInformation\ColorTransormator\Other\" />
+    <Folder Include="BitmapInformation\ColorTransormator\ColorSpace\" />
+    <Folder Include="BitmapInformation\RgbTransformator\" />
+    <Folder Include="BitmapInformation\OtherTransformator\" />
+  </ItemGroup>
+</Project>

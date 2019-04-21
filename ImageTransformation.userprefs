@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="ImageTransformation/ImageTransformation.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ImageTransformation/BitmapInformation/OtherTransformator/FilteringMatrixTransformator.cs">
+    <Files>
+      <File FileName="ImageTransformation/BitmapInformation/OtherTransformator/FilteringMatrixTransformator.cs" Line="63" Column="46" />
+      <File FileName="ImageTransformation/Matrices/FilteringMatrix.cs" Line="9" Column="42" />
+      <File FileName="ImageTransformation/Matrices/SquareMatrix.cs" Line="6" Column="36" />
+      <File FileName="ImageTransformation/Matrices/Matrix.cs" Line="163" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

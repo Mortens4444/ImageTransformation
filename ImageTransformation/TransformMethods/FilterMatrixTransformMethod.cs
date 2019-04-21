@@ -1,0 +1,30 @@
+﻿namespace ImageTransformation.TransformMethods
+{
+    public enum FilterMatrixTransformMethod : byte
+    {
+        Brightning,
+        SoftBlur,
+        HardBlur,
+        MotionBlur,
+        FindHorizontalEdges,
+        FindHorizontalEdges_2,
+        FindVerticalEdges,
+        FindVerticalEdges_2,
+        Find45DegreeEdges,
+        SimpleEdgeDetector,
+        SimpleEdgeDetector_2,
+        SimpleEdgeDetector_3,
+        Sharpen,
+        Sharpen_2,
+        Sharpen_3,
+        Sharpen_4,
+        ExcessiveEdges,
+        Emboss,
+        Emboss_2,
+        MeanFilter,
+        RGB_to_YIQ,
+        YIQ_to_RGB,
+        ImageColorSpaceTransformation,
+        ImageColorSpaceTransformation_2
+    }
+}
