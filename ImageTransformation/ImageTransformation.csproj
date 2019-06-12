@@ -163,9 +163,6 @@
     <Compile Include="BitmapInformation\OtherTransformator\FilteringMatrixTransformator.cs" />
     <Compile Include="Extensions\SingleExtensions.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Jellyfish.jpg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -174,16 +171,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="BitmapInformation\ColorTransormator\" />
-    <Folder Include="BitmapInformation\ImageTransformator\" />
-    <Folder Include="BitmapInformation\ColorTransormator\Grayscale\" />
-    <Folder Include="BitmapInformation\ColorTransormator\Inverse\" />
-    <Folder Include="BitmapInformation\ColorTransormator\Swap\" />
-    <Folder Include="BitmapInformation\ColorTransormator\Scale\" />
-    <Folder Include="BitmapInformation\ColorTransormator\Other\" />
-    <Folder Include="BitmapInformation\ColorTransormator\ColorSpace\" />
-    <Folder Include="BitmapInformation\RgbTransformator\" />
-    <Folder Include="BitmapInformation\OtherTransformator\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -21,7 +21,10 @@ namespace ImageTransformation.BitmapInformation
                 var rgb = ColorExtensions.GetNormalizedValue(this[i + RedIndex], this[i + GreenIndex], this[i]);
                 if (rgb.Red < 0.2 || rgb.Red > 0.46 || rgb.Green > 2 * rgb.Red - 0.4 && rgb.Red <= 0.46 || rgb.Red > 0.8 || rgb.Green > 1 - rgb.Red)
                 {
-                    this[i + AlphaIndex] = Byte.MinValue;
+					if (i + AlphaIndex < Length)
+					{
+						this[i + AlphaIndex] = Byte.MinValue;
+					}
                 }
                 /*else
                 {

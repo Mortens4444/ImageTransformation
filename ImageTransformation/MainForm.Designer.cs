@@ -30,7 +30,7 @@
 		{
 			this.p_Main = new System.Windows.Forms.Panel();
 			this.gb_Method = new System.Windows.Forms.GroupBox();
-            this.lbl_Arrow = new System.Windows.Forms.Label();
+			this.lbl_Arrow = new System.Windows.Forms.Label();
 			this.lbl_FromTo = new System.Windows.Forms.Label();
 			this.p_Replaced = new System.Windows.Forms.Panel();
 			this.p_To = new System.Windows.Forms.Panel();
@@ -73,7 +73,7 @@
 			// gb_Method
 			// 
 			this.gb_Method.BackColor = System.Drawing.SystemColors.Control;
-            this.gb_Method.Controls.Add(this.lbl_Arrow);
+			this.gb_Method.Controls.Add(this.lbl_Arrow);
 			this.gb_Method.Controls.Add(this.lbl_FromTo);
 			this.gb_Method.Controls.Add(this.p_Replaced);
 			this.gb_Method.Controls.Add(this.p_To);
@@ -91,14 +91,14 @@
 			this.gb_Method.TabStop = false;
 			this.gb_Method.Text = "Method";
 			// 
-            // lbl_Arrow
+			// lbl_Arrow
 			// 
-            this.lbl_Arrow.AutoSize = true;
-            this.lbl_Arrow.Location = new System.Drawing.Point(87, 142);
-            this.lbl_Arrow.Name = "lbl_Arrow";
-            this.lbl_Arrow.Size = new System.Drawing.Size(16, 13);
-            this.lbl_Arrow.TabIndex = 9;
-            this.lbl_Arrow.Text = "->";
+			this.lbl_Arrow.AutoSize = true;
+			this.lbl_Arrow.Location = new System.Drawing.Point(87, 142);
+			this.lbl_Arrow.Name = "lbl_Arrow";
+			this.lbl_Arrow.Size = new System.Drawing.Size(16, 13);
+			this.lbl_Arrow.TabIndex = 9;
+			this.lbl_Arrow.Text = "->";
 			// 
 			// lbl_FromTo
 			// 
@@ -116,7 +116,7 @@
 			this.p_Replaced.Name = "p_Replaced";
 			this.p_Replaced.Size = new System.Drawing.Size(29, 26);
 			this.p_Replaced.TabIndex = 7;
-            this.p_Replaced.MouseClick += this.ChooseColor;
+            this.p_Replaced.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ChooseColor);
 			// 
 			// p_To
 			// 
@@ -125,7 +125,7 @@
 			this.p_To.Name = "p_To";
 			this.p_To.Size = new System.Drawing.Size(29, 26);
 			this.p_To.TabIndex = 7;
-            this.p_To.MouseClick += this.ChooseColor;
+            this.p_To.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ChooseColor);
 			// 
 			// p_From
 			// 
@@ -134,7 +134,7 @@
 			this.p_From.Name = "p_From";
 			this.p_From.Size = new System.Drawing.Size(29, 26);
 			this.p_From.TabIndex = 6;
-            this.p_From.MouseClick += this.ChooseColor;
+            this.p_From.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ChooseColor);
 			// 
 			// rb_ColorReplace
 			// 
@@ -155,7 +155,7 @@
 			this.rb_FilterMatrixTransform.TabIndex = 4;
 			this.rb_FilterMatrixTransform.Text = "FilterMatrixTransform";
 			this.rb_FilterMatrixTransform.UseVisualStyleBackColor = true;
-            this.rb_FilterMatrixTransform.CheckedChanged += this.rb_FilterMatrixTransform_CheckedChanged;
+            this.rb_FilterMatrixTransform.CheckedChanged += new System.EventHandler(this.rb_FilterMatrixTransform_CheckedChanged);
 			// 
 			// nud_BlockSize
 			// 
@@ -178,7 +178,7 @@
             0,
             0,
             0});
-            this.nud_BlockSize.ValueChanged += this.SetTransformedImage;
+            this.nud_BlockSize.ValueChanged += new System.EventHandler(this.SetTransformedImage);
 			// 
 			// rb_BlockTransform
 			// 
@@ -189,7 +189,7 @@
 			this.rb_BlockTransform.TabIndex = 2;
 			this.rb_BlockTransform.Text = "BlockTransform";
 			this.rb_BlockTransform.UseVisualStyleBackColor = true;
-            this.rb_BlockTransform.CheckedChanged += this.rb_BlockTransform_CheckedChanged;
+            this.rb_BlockTransform.CheckedChanged += new System.EventHandler(this.rb_BlockTransform_CheckedChanged);
 			// 
 			// rb_ImageTransformMethod
 			// 
@@ -200,7 +200,7 @@
 			this.rb_ImageTransformMethod.TabIndex = 1;
 			this.rb_ImageTransformMethod.Text = "ImageTransformMethod";
 			this.rb_ImageTransformMethod.UseVisualStyleBackColor = true;
-            this.rb_ImageTransformMethod.CheckedChanged += this.rb_ImageTransformMethod_CheckedChanged;
+            this.rb_ImageTransformMethod.CheckedChanged += new System.EventHandler(this.rb_ImageTransformMethod_CheckedChanged);
 			// 
 			// rb_ColorTransformMethod
 			// 
@@ -211,7 +211,7 @@
 			this.rb_ColorTransformMethod.TabIndex = 0;
 			this.rb_ColorTransformMethod.Text = "ColorTransformMethod";
 			this.rb_ColorTransformMethod.UseVisualStyleBackColor = true;
-            this.rb_ColorTransformMethod.CheckedChanged += this.rb_ColorTransformMethod_CheckedChanged;
+            this.rb_ColorTransformMethod.CheckedChanged += new System.EventHandler(this.rb_ColorTransformMethod_CheckedChanged);
 			// 
 			// btn_Save
 			// 
@@ -222,7 +222,7 @@
 			this.btn_Save.TabIndex = 4;
 			this.btn_Save.Text = "Save";
 			this.btn_Save.UseVisualStyleBackColor = false;
-            this.btn_Save.Click += this.btn_Save_Click;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
 			// 
 			// btn_Browse
 			// 
@@ -233,7 +233,7 @@
 			this.btn_Browse.TabIndex = 3;
 			this.btn_Browse.Text = "Browse";
 			this.btn_Browse.UseVisualStyleBackColor = false;
-            this.btn_Browse.Click += this.btn_Browse_Click;
+            this.btn_Browse.Click += new System.EventHandler(this.btn_Browse_Click);
 			// 
 			// cb_Method
 			// 
@@ -242,7 +242,7 @@
 			this.cb_Method.Name = "cb_Method";
 			this.cb_Method.Size = new System.Drawing.Size(156, 21);
 			this.cb_Method.TabIndex = 2;
-            this.cb_Method.SelectedIndexChanged += this.SetTransformedImage;
+            this.cb_Method.SelectedIndexChanged += new System.EventHandler(this.SetTransformedImage);
 			// 
 			// pb_Transformed
 			// 
@@ -254,19 +254,17 @@
 			this.pb_Transformed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pb_Transformed.TabIndex = 1;
 			this.pb_Transformed.TabStop = false;
-            this.pb_Transformed.Visible = true;
 			// 
 			// pb_Original
 			// 
 			this.pb_Original.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pb_Original.Image = global::ImageTransformation.Properties.Resources.Jellyfish;
 			this.pb_Original.Location = new System.Drawing.Point(0, 0);
 			this.pb_Original.Name = "pb_Original";
 			this.pb_Original.Size = new System.Drawing.Size(761, 570);
 			this.pb_Original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pb_Original.TabIndex = 0;
 			this.pb_Original.TabStop = false;
-            this.pb_Original.Visible = false;
+			this.pb_Original.Visible = false;
 			// 
 			// ofd_OpenFile
 			// 

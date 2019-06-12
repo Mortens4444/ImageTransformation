@@ -26,7 +26,8 @@ namespace ImageTransformation
             }
 
 			pb_Original.Image = Image.FromFile(ofd_OpenFile.FileName);
-            SetTransformedImage();
+
+			SetTransformedImage();
 		}
 
 		void btn_Save_Click(object sender, EventArgs e)
@@ -116,36 +117,41 @@ namespace ImageTransformation
 
         Image GetTransformedImage()
         {
+			if (pb_Original.Image == null)
+			{
+				return null;
+			}
+
             if (rb_ColorTransformMethod.Checked)
             {
                 var colorTransformMethod = (ColorTransformMethod)cb_Method.SelectedIndex;
-				return transformatorFactory.Get(colorTransformMethod, pb_Original.Image);
+				return transformatorFactory.Get(colorTransformMethod, (Image)pb_Original.Image.Clone());
             }
             
 			if (rb_ImageTransformMethod.Checked)
             {
                 var imageTransformMethod = (ImageTransformMethod)cb_Method.SelectedIndex;
-				return transformatorFactory.Get(imageTransformMethod, pb_Original.Image);
+				return transformatorFactory.Get(imageTransformMethod, (Image)pb_Original.Image.Clone());
             }
 
 			if (rb_ColorReplace.Checked)
             {
-				return transformatorFactory.Get(pb_Original.Image, p_From.BackColor, p_To.BackColor, p_Replaced.BackColor);
+				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), p_From.BackColor, p_To.BackColor, p_Replaced.BackColor);
             }
             
 			if (rb_BlockTransform.Checked)
             {
-				return transformatorFactory.Get(pb_Original.Image, (int)nud_BlockSize.Value);
+				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), (int)nud_BlockSize.Value);
             }
             
 			if (rb_FilterMatrixTransform.Checked)
 			{
 				if (cb_Method.SelectedIndex == -1)
 				{
-					return pb_Original.Image;
+					return (Image)pb_Original.Image.Clone();
 				}
 
-				return transformatorFactory.Get(pb_Original.Image, (FilterMatrixTransformMethod)cb_Method.SelectedIndex);
+				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), (FilterMatrixTransformMethod)cb_Method.SelectedIndex);
             }
 
 	        throw new NotImplementedException();
