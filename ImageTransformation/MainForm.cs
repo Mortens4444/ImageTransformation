@@ -32,7 +32,7 @@ namespace ImageTransformation
 
 		void btn_Save_Click(object sender, EventArgs e)
 		{
-            if (sfd_SaveFile.ShowDialog() == DialogResult.OK)
+            if (sfd_SaveFile.ShowDialog() == DialogResult.OK && pb_Transformed.Image != null)
             {
                 pb_Transformed.Image.Save(sfd_SaveFile.FileName);
             }
