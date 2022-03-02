@@ -122,6 +122,21 @@ namespace ImageTransformation
 				return null;
 			}
 
+			if (rb_ColorReplace.Checked)
+            {
+				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), p_From.BackColor, p_To.BackColor, p_Replaced.BackColor);
+            }
+            
+			if (rb_BlockTransform.Checked)
+            {
+				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), (int)nud_BlockSize.Value);
+            }
+
+            if (cb_Method.SelectedIndex == -1)
+            {
+                return (Image)pb_Original.Image.Clone();
+            }
+
             if (rb_ColorTransformMethod.Checked)
             {
                 var colorTransformMethod = (ColorTransformMethod)cb_Method.SelectedIndex;
@@ -134,23 +149,8 @@ namespace ImageTransformation
 				return transformatorFactory.Get(imageTransformMethod, (Image)pb_Original.Image.Clone());
             }
 
-			if (rb_ColorReplace.Checked)
-            {
-				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), p_From.BackColor, p_To.BackColor, p_Replaced.BackColor);
-            }
-            
-			if (rb_BlockTransform.Checked)
-            {
-				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), (int)nud_BlockSize.Value);
-            }
-            
 			if (rb_FilterMatrixTransform.Checked)
 			{
-				if (cb_Method.SelectedIndex == -1)
-				{
-					return (Image)pb_Original.Image.Clone();
-				}
-
 				return transformatorFactory.Get((Image)pb_Original.Image.Clone(), (FilterMatrixTransformMethod)cb_Method.SelectedIndex);
             }
 
