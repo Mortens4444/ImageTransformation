@@ -25,7 +25,7 @@ namespace ImageTransformation
                 return;
             }
 
-			pb_Original.Image = Image.FromFile(ofd_OpenFile.FileName);
+			pb_Original.Image = new Bitmap(Image.FromFile(ofd_OpenFile.FileName));
 
 			SetTransformedImage();
 		}
