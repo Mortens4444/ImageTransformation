@@ -20,6 +20,7 @@ namespace ImageTransformation.BitmapInformation
                 result[i] = GetValue(i);
                 result[i + GreenIndex] = result[i];
                 result[i + RedIndex] = result[i];
+                result[i + AlphaIndex] = 255;
             }
             RgbBytes = result;
         }
